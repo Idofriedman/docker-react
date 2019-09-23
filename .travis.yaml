@@ -3,6 +3,7 @@ services:
     - docker
     
 before_install:
+    - gem install rake
     - docker build -t ido/docker-react -f Dockerfile.dev .
 script:
     - docker run ido/docker-react npm run test -- --covrage
